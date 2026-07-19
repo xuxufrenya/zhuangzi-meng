@@ -179,26 +179,6 @@ function kickMusic(){ if(_musicKicked)return; _musicKicked=true; startMusic(); [
 ['pointerdown','touchstart','click','keydown'].forEach(e=>document.addEventListener(e,kickMusic,{passive:true}));
 musicBtn.onclick=()=>{if(!bgm.querySelector('source')){musicBtn.classList.toggle('on');alert("背景音乐未加载，请确认 assets/audio/bgm.mp3 存在。");return;}if(musicOn){bgm.pause();musicBtn.classList.remove('on');musicOn=false}else{bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('on')}).catch(()=>{});}};
 
-/* ====== 统一心印卡片高度(取所有章中最高的, 即第四章为标准) ====== */
-function computeHeartMinH(){
-  const box=document.createElement('div');
-  box.style.cssText='position:absolute;left:-9999px;top:0;width:calc(100vw - 44px);max-width:436px;visibility:hidden;';
-  document.body.appendChild(box);
-  let maxH=0;
-  for(let i=1;i<=4;i++){
-    for(const opt of ['A','B']){
-      const o=chapters[i][opt];
-      box.innerHTML=`<div class="result-card"><div class="heart">${LEAF_EMOJI[o.leaf]||'🌿'}</div><div class="heart-name">${o.leaf}</div><div class="heart-desc">${o.leafDesc}</div><div class="seal-divider"></div><div class="result-body">${o.result}</div></div>`;
-      const h=box.firstChild.offsetHeight;
-      if(h>maxH)maxH=h;
-    }
-  }
-  document.body.removeChild(box);
-  if(maxH>0) document.documentElement.style.setProperty('--heart-min-h', maxH+'px');
-}
-/* 等字体加载完再测, 高度才准 */
-if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(computeHeartMinH); } else { computeHeartMinH(); }
-
 /* ====== 加载进度条 ====== */
 function startLoading(){
   const fill=document.getElementById('loadFill'),pct=document.getElementById('loadPct'),tip=document.getElementById('loadTip');
