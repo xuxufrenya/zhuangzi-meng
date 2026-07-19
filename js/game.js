@@ -186,6 +186,7 @@ function startLoading(){
   tip.textContent="正在入梦…";
   const imgs=[];for(const i in chapters)if(chapters[i].img)imgs.push(chapters[i].img);for(const k in spirits)if(spirits[k].img)imgs.push(spirits[k].img);if(PAGE_BG['s-title'])imgs.push(PAGE_BG['s-title']);if(PAGE_BG['s-chapters'])imgs.push(PAGE_BG['s-chapters']);
 imgs.push("assets/images/bg-heart-v5.jpg"); // 心印页背景也提前预载，避免游玩中临时拉图卡顿
+imgs.push("assets/qrcode/wechat.png"); imgs.push("assets/qrcode/video.png"); // 报告页二维码提前预载, 避免出报告时临时拉图卡顿
   const total=imgs.length;let loaded=0;
   function setP(v){fill.style.width=v+'%';pct.textContent=v+'%';}
   function finish(){setP(100);setTimeout(()=>go('s-title'),400);}
