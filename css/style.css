@@ -111,6 +111,7 @@ body{
 .result-page{ /* 外层容器 */ }
 .result-card{
   margin-top:0; /* 改动1：内容在顶部，第一屏完整展示 */
+  min-height:var(--heart-min-h,460px); /* 统一各章心印卡片高度(取最高章为标准) */
   border:1px solid var(--line);border-radius:14px;padding:18px 16px;
   background:rgba(255,255,255,.55);text-align:center;
   background-image:url('assets/images/bg-heart-v5.jpg'); /* 改动4：使用图一（v5） */
