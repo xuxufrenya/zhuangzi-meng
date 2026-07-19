@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>庄子梦 · 跟着庄子，开启你的心灵之旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+  <div class="topbar"><div class="icon-btn" id="musicBtn" title="背景音乐">♪</div></div>
+
+  <!-- 加载页 -->
+  <section class="screen active" id="s-loading">
+    <div class="load-wrap">
+      <div class="load-seal">庄 子 梦</div>
+      <div class="load-title">正在入梦</div>
+      <div class="load-sub">庄子梦 · 心灵之旅</div>
+      <div class="load-bar"><div class="load-fill" id="loadFill"></div></div>
+      <div class="load-pct" id="loadPct">0%</div>
+      <div class="load-tip" id="loadTip">正在唤醒庄周梦蝶……</div>
+    </div>
+  </section>
+
+  <!-- 标题页 -->
+  <section class="screen" id="s-title" data-bg="assets/images/bg-title.jpg">
+    <div class="title-wrap">
+      <button class="circle-btn" onclick="go('s-chapters')">踏上旅程</button>
+    </div>
+  </section>
+
+  <!-- 章节选择页（按钮上移） -->
+  <section class="screen" id="s-chapters" data-bg="assets/images/bg-chapters.jpg">
+    <div class="chapter-list" id="chapterList"></div>
+    <div class="foot-space"></div>
+  </section>
+
+  <!-- 章节剧情 / 结果 -->
+  <section class="screen" id="s-chapter">
+    <div id="chapterBody"></div>
+  </section>
+
+  <!-- 心灵画像报告页（普通布局，无固定背景图） -->
+  <section class="screen" id="s-report">
+    <div class="report-scroll" id="reportBody"></div>
+  </section>
+</div>
+
+<!-- 弹窗：四段完成 → 直接弹出 -->
+<div class="modal-overlay" id="genModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-text">四段寓言，全部体验完毕。</div>
+    <div class="modal-text sub">准备好查看你的心灵画像了吗？</div>
+    <button class="btn primary modal-go" onclick="goReport()">生成心灵画像</button>
+  </div>
+</div>
+
+<audio id="bgm" loop preload="none"></audio>
+<script src="js/data.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
