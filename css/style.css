@@ -30,12 +30,10 @@ body{
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
 .topbar{position:absolute;top:12px;right:12px;z-index:5;}
-.icon-btn{width:40px;height:40px;border-radius:50%;border:none;
-  background:#4A6B5C;color:#fff;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 8px rgba(0,0,0,.2);transition:.25s;}
-.icon-btn.on{background:#3f6b54;box-shadow:0 3px 12px rgba(63,107,84,.4);}
-.icon-btn svg{display:block;}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(255,255,255,.55);color:var(--ink);font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;}
+.icon-btn.on{background:var(--green);color:#fff;border-color:var(--green);}
 
 /* ====== 加载页 ====== */
 #s-loading{justify-content:center;align-items:center;text-align:center;}
