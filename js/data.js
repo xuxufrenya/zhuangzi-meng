@@ -6,15 +6,15 @@ const PAGE_BG = {
   "s-title":     "assets/images/bg-title.jpg",
   "s-chapters":  "assets/images/bg-chapters.jpg",
 };
-const BG_MUSIC = "assets/audio/bgm.mp3";
+const BG_MUSIC = ""; // 暂未加入背景音乐；把音乐命名为 bgm.mp3 放入 assets/audio/ 后改回 "assets/audio/bgm.mp3" 即可
 
 const DIM = ["SP","SI","CR","IN","CL"];
 const DIM_CN = {SP:"感知力",SI:"思辨力",CR:"创造力",IN:"包容力",CL:"洞察力"};
 const DIM_PRIORITY = ["CR","SP","SI","IN","CL"];
 const CH_LABELS = ["","壹","贰","叁","肆"];
 
-/* 心印页背景图（图一） */
-const BG_HEART = "assets/images/bg-heart-new.jpg";
+/* 心印页背景图 */
+const BG_HEART = "assets/images/bg-heart-v5.jpg";
 
 /* 心印 → 图标 emoji 映射 */
 const LEAF_EMOJI = {
