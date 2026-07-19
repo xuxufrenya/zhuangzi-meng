@@ -171,7 +171,12 @@ function resetGame(){state.choice={1:null,2:null,3:null,4:null};renderChapters()
 
 /* ====== 音乐 ====== */
 const bgm=document.getElementById('bgm'),musicBtn=document.getElementById('musicBtn');let musicOn=false;
-bgm.volume=0.35; // 默认轻柔背景音量，不抢文字阅读
+bgm.volume=0.35; bgm.preload='auto'; // 提前缓冲，首次交互即可无缝起播
+function startMusic(){ if(musicOn||!bgm.querySelector('source'))return; bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('on');}).catch(()=>{}); }
+/* 浏览器禁止带声自动播放，故在玩家首次触摸/点击时自动起播（无需手动开♪） */
+let _musicKicked=false;
+function kickMusic(){ if(_musicKicked)return; _musicKicked=true; startMusic(); ['pointerdown','touchstart','click','keydown'].forEach(e=>document.removeEventListener(e,kickMusic)); }
+['pointerdown','touchstart','click','keydown'].forEach(e=>document.addEventListener(e,kickMusic,{passive:true}));
 musicBtn.onclick=()=>{if(!bgm.querySelector('source')){musicBtn.classList.toggle('on');alert("背景音乐未加载，请确认 assets/audio/bgm.mp3 存在。");return;}if(musicOn){bgm.pause();musicBtn.classList.remove('on');musicOn=false}else{bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('on')}).catch(()=>{});}};
 
 /* ====== 加载进度条 ====== */
@@ -180,6 +185,7 @@ function startLoading(){
   /* loading提示固定为「正在入梦…」，不再随机轮播 */
   tip.textContent="正在入梦…";
   const imgs=[];for(const i in chapters)if(chapters[i].img)imgs.push(chapters[i].img);for(const k in spirits)if(spirits[k].img)imgs.push(spirits[k].img);if(PAGE_BG['s-title'])imgs.push(PAGE_BG['s-title']);if(PAGE_BG['s-chapters'])imgs.push(PAGE_BG['s-chapters']);
+imgs.push("assets/images/bg-heart-v5.jpg"); // 心印页背景也提前预载，避免游玩中临时拉图卡顿
   const total=imgs.length;let loaded=0;
   function setP(v){fill.style.width=v+'%';pct.textContent=v+'%';}
   function finish(){setP(100);setTimeout(()=>go('s-title'),400);}
