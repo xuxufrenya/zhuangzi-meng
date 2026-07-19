@@ -94,8 +94,8 @@ body{
 }
 .intro p{margin:0 0 12px 0;}
 
-/* AB选项：左右并排正方形黑色按钮 */
-.options{display:flex;gap:12px;margin-top:16px;}
+/* AB选项：左右并排正方形黑色按钮，水平居中 */
+.options{display:flex;gap:12px;margin-top:16px;justify-content:center;}
 .option{
   flex:1;aspect-ratio:1/1;max-width:150px;border-radius:12px;
   background:#1a1a1a;color:#e8e0d0;cursor:pointer;transition:.2s;
