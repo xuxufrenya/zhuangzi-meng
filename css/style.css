@@ -184,8 +184,8 @@ body{
 .btn:hover{background:var(--gold);color:#fff;}
 .btn.primary{background:var(--green);color:#fff;border-color:var(--green);}
 .btn.primary:hover{background:#345a47;}
-.btn.ghost{border:2px solid var(--ink);color:var(--ink);border-radius:30px;padding:10px 28px;}
-.btn.ghost:hover{background:var(--ink);color:var(--paper);}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink);background:transparent;border-radius:30px;padding:10px 28px;}
+.btn.ghost:hover,.btn.ghost:active{background:transparent;opacity:.7;} /* 始终镂空, 不填充黑底 */
 /* 再玩一次：全黑底色 */
 .btn-black{background:#000;color:#fff;border:2px solid #000;border-radius:30px;padding:10px 28px;}
 .btn-black:hover{background:#000;color:#fff;}
