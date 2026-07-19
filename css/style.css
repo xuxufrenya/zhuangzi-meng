@@ -124,7 +124,7 @@ body{
   animation:pop .5s ease both;}
 @keyframes pop{from{transform:scale(.4);opacity:0;}to{transform:scale(1);opacity:1;}}
 .heart-name{font-size:19px;letter-spacing:3px;color:var(--ink);margin-bottom:2px;}
-.heart-desc{font-size:13px;color:var(--ink-soft);letter-spacing:.3px;line-height:1.65;}
+.heart-desc{font-size:13px;color:#567C68;letter-spacing:.3px;line-height:1.65;}
 .result-body{font-size:13.5px;color:var(--ink);margin:12px 0 2px;text-align:left;line-height:2;}
 .result-body p{margin:0 0 10px 0;}
 
@@ -185,6 +185,9 @@ body{
 .btn.primary:hover{background:#345a47;}
 .btn.ghost{border:2px solid var(--ink);color:var(--ink);border-radius:30px;padding:10px 28px;}
 .btn.ghost:hover{background:var(--ink);color:var(--paper);}
+/* 再玩一次：全黑底色 */
+.btn-black{background:#000;color:#fff;border:2px solid #000;border-radius:30px;padding:10px 28px;}
+.btn-black:hover{background:#000;color:#fff;}
 
 /* 弹窗 */
 .modal-overlay{

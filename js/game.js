@@ -160,7 +160,7 @@ function goReport(){
       背景音乐出处：本元同和（视频号、网易云音乐同名）
     </div>
     <div style="text-align:center;margin-top:22px;">
-      <button class="btn ghost" onclick="resetGame()">再玩一次</button>
+      <button class="btn btn-black" onclick="resetGame()">再玩一次</button>
     </div>`;
   go('s-report');
 }

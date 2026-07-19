@@ -12,9 +12,12 @@
 <div id="app">
   <div class="topbar"><div class="icon-btn" id="musicBtn" title="背景音乐">♪</div></div>
 
-  <!-- 加载页（仅保留进度条、100%、正在唤醒庄周梦蝶） -->
+  <!-- 加载页：仅显示进度条+100%+正在入梦…，但用visibility:hidden保留原3行占位以维持原位置 -->
   <section class="screen active" id="s-loading">
     <div class="load-wrap">
+      <div class="load-seal" style="visibility:hidden">庄 子 梦</div>
+      <div class="load-title" style="visibility:hidden">正在入梦</div>
+      <div class="load-sub" style="visibility:hidden">庄子梦 · 心灵之旅</div>
       <div class="load-bar"><div class="load-fill" id="loadFill"></div></div>
       <div class="load-pct" id="loadPct">0%</div>
       <div class="load-tip" id="loadTip">正在入梦…</div>
