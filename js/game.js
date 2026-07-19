@@ -53,13 +53,12 @@ function openChapter(i){
   go('s-chapter');
 }
 
-/* ====== 选择结果（无标题，心印页背景按章节区分）===== */
+/* ====== 选择结果（无标题，心印页背景统一用图一）===== */
 function choose(i,opt){
   const c=chapters[i],o=c[opt]; state.choice[i]=opt;
-  /* 第四章心印页用猴子背景(ch4.jpg)，其余章节用图一(bg-heart-v5.jpg) */
-  const heartBg = (i===4) ? "assets/images/ch4.jpg" : "assets/images/bg-heart-v5.jpg";
+  /* 所有章节心印页统一用图一(bg-heart-v5.jpg)，不再嵌章节背景图 */
   document.getElementById('chapterBody').innerHTML = `
-    <div class="result-card" style="background-image:url('${heartBg}')">
+    <div class="result-card">
       <div class="heart">${LEAF_EMOJI[o.leaf]||'🌿'}</div>
       <div class="heart-name">${o.leaf}</div>
       <div class="heart-desc">${o.leafDesc}</div>
@@ -130,10 +129,11 @@ function goReport(){
     <div class="spirit-art">${spiritImg}<span class="spirit-emoji">${sp.emoji}</span></div>
     <div class="spirit-name">${sp.name}</div>
     <div class="report-game">庄子梦 · 心灵画像</div>
+    <div class="final-divider"></div>
     <div class="report-founder">
-      <span class="brand">本游戏由【徐徐】</span>创始人——前500强大厂设计总监、心灵成长导师，用AI独立创作完成🩵<br>
+      <span class="brand">本游戏由【徐徐】</span><strong>创始人——前500强大厂设计总监、心灵成长导师，用AI独立创作完成</strong>❤️<br>
       想让孩子也用AI创造属于自己的app、游戏艺术作品？<br>
-      关注我们，带领你的孩子进入想象力＋创造力的AI艺术世界🎨
+      <strong>关注我们，带领你的孩子进入想象力＋创造力的AI艺术世界🎨</strong>
     </div>
     <div class="report-qr-row">
       <div class="qr-col">
@@ -145,6 +145,7 @@ function goReport(){
         <div class="qr-label">视频号：徐徐 · 心灵成长陪伴</div>
       </div>
     </div>
+    <div class="final-divider"></div>
     <div class="dim-tag">—— ${sp.tag} ——</div>
     <div class="core-quote">${sp.core.replace(/\n/g,'<br>')}</div>
     ${radarSVG(sc)}

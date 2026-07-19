@@ -84,9 +84,9 @@ body{
   flex-shrink:0;
 }
 
-/* ====== 章节剧情页（无标题、无占位图，内容整体落在第一屏偏下）===== */
+/* ====== 章节剧情页（无标题、无占位图，内容落在第一屏偏下，兼容原生浏览器导航栏）===== */
 .scene-head{display:none;} /* 隐藏章节标题 */
-#s-chapter{padding-top:0;padding-bottom:6vh;} /* 改动2：去掉顶部空白，底部留6vh间隙 */
+#s-chapter{padding-top:0;padding-bottom:80px;} /* ①去掉顶部空白 ②底部留80px防原生浏览器导航栏遮挡 */
 #chapterBody{margin-top:auto;} /* 整块内容沉到第一屏偏下 */
 .intro{
   font-size:15px;color:var(--ink);letter-spacing:.3px;margin-bottom:14px;line-height:2;
