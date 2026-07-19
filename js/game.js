@@ -171,7 +171,8 @@ function resetGame(){state.choice={1:null,2:null,3:null,4:null};renderChapters()
 
 /* ====== 音乐 ====== */
 const bgm=document.getElementById('bgm'),musicBtn=document.getElementById('musicBtn');let musicOn=false;
-musicBtn.onclick=()=>{if(!bgm.querySelector('source')){musicBtn.classList.toggle('on');alert("把音乐命名为 bgm.mp3 放入 assets/audio/ 即可。");return;}if(musicOn){bgm.pause();musicBtn.classList.remove('on');musicOn=false}else{bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('on')}).catch(()=>{});}};
+bgm.volume=0.35; // 默认轻柔背景音量，不抢文字阅读
+musicBtn.onclick=()=>{if(!bgm.querySelector('source')){musicBtn.classList.toggle('on');alert("背景音乐未加载，请确认 assets/audio/bgm.mp3 存在。");return;}if(musicOn){bgm.pause();musicBtn.classList.remove('on');musicOn=false}else{bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('on')}).catch(()=>{});}};
 
 /* ====== 加载进度条 ====== */
 function startLoading(){

@@ -6,7 +6,7 @@ const PAGE_BG = {
   "s-title":     "assets/images/bg-title.jpg",
   "s-chapters":  "assets/images/bg-chapters.jpg",
 };
-const BG_MUSIC = ""; // 暂未加入背景音乐；把音乐命名为 bgm.mp3 放入 assets/audio/ 后改回 "assets/audio/bgm.mp3" 即可
+const BG_MUSIC = "assets/audio/bgm.mp3"; // 背景音乐：同和乐团《庄子解压系统》前奏无人声段(0~18s, 淡入淡出循环)
 
 const DIM = ["SP","SI","CR","IN","CL"];
 const DIM_CN = {SP:"感知力",SI:"思辨力",CR:"创造力",IN:"包容力",CL:"洞察力"};
