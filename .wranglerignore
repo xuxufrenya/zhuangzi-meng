@@ -1,0 +1,8 @@
+.git
+.wrangler
+__pycache__
+server.py
+.gitignore
+.nojekyll
+.wranglerignore
+README.md
