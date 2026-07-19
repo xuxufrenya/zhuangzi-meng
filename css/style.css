@@ -125,6 +125,7 @@ body{
 @keyframes pop{from{transform:scale(.4);opacity:0;}to{transform:scale(1);opacity:1;}}
 .heart-name{font-size:19px;letter-spacing:3px;color:var(--ink);margin-bottom:2px;}
 .heart-desc{font-size:13px;color:#567C68;letter-spacing:.3px;line-height:1.65;}
+.seal-divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:14px 8px 6px;}
 .result-body{font-size:13.5px;color:var(--ink);margin:12px 0 2px;text-align:left;line-height:2;}
 .result-body p{margin:0 0 10px 0;}
 

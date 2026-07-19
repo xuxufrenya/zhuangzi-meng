@@ -63,6 +63,7 @@ function choose(i,opt){
       <div class="heart">${LEAF_EMOJI[o.leaf]||'🌿'}</div>
       <div class="heart-name">${o.leaf}</div>
       <div class="heart-desc">${o.leafDesc}</div>
+      <div class="seal-divider"></div>
       <div class="result-body">${o.result}</div>
     </div>
     <div style="margin-top:18px;display:flex;gap:10px;justify-content:center;">
