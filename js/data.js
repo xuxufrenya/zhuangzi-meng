@@ -114,7 +114,7 @@ const spirits = {
     codexT:"💫 包容之量",
     codexD:"你没有执着对错，你看见了感受。包容，让心变大了。",
     quote:`无用之用，方为大用。你的天赋，是容纳万物的胸怀。\n\n记住：当你不急着评判，世界就温柔了。` },
-  CL:{ emoji:"🔆", img:"assets/images/spirit-mirror.png", name:"明镜",
+  CL:{ emoji:"🪞", img:"assets/images/spirit-mirror.png", name:"明镜",
     core:`你心里有一面干净的镜子。名相来来去去，你看得见不变的东西。`,
     tag:"洞察力卓越 · 澄明力超群",
     codexT:"💫 澄明之智",

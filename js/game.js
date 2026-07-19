@@ -147,6 +147,7 @@ function goReport(){
     <div class="dim-tag">—— ${sp.tag} ——</div>
     <div class="core-quote">${sp.core.replace(/\n/g,'<br>')}</div>
     ${radarSVG(sc)}
+    <div class="final-divider"></div>
     <div class="codex">
       <div class="ct">${sp.codexT}</div>
       <div class="cd">${sp.codexD}</div>
@@ -173,12 +174,12 @@ musicBtn.onclick=()=>{if(!bgm.querySelector('source')){musicBtn.classList.toggle
 /* ====== 加载进度条 ====== */
 function startLoading(){
   const fill=document.getElementById('loadFill'),pct=document.getElementById('loadPct'),tip=document.getElementById('loadTip');
-  const tips=["正在唤醒庄周梦蝶……","正在采集逍遥游心……","正在绘制维度图……","正在聆听本元之音……"];
-  const tipT=setInterval(()=>{tip.textContent=tips[Math.random()*tips.length|0]},1100);
+  /* loading提示固定为「正在入梦…」，不再随机轮播 */
+  tip.textContent="正在入梦…";
   const imgs=[];for(const i in chapters)if(chapters[i].img)imgs.push(chapters[i].img);for(const k in spirits)if(spirits[k].img)imgs.push(spirits[k].img);if(PAGE_BG['s-title'])imgs.push(PAGE_BG['s-title']);if(PAGE_BG['s-chapters'])imgs.push(PAGE_BG['s-chapters']);
   const total=imgs.length;let loaded=0;
   function setP(v){fill.style.width=v+'%';pct.textContent=v+'%';}
-  function finish(){clearInterval(tipT);setP(100);setTimeout(()=>go('s-title'),400);}
+  function finish(){setP(100);setTimeout(()=>go('s-title'),400);}
   if(total===0){let p=0;const sim=setInterval(()=>{p+=Math.ceil(Math.random()*9)+5;if(p>=100){clearInterval(sim);setP(100);finish()}else setP(p)},130);return;}
   let done=false;
   function tick(){const v=Math.round(loaded/total*100);setP(v);if(loaded>=total&&!done){done=true;finish();}}
