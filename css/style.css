@@ -59,8 +59,8 @@ body{
 .circle-btn:hover{background:#333;transform:scale(1.05);}
 .circle-btn:active{transform:scale(.95);}
 
-/* ====== 章节选择页：上移约300px（padding-top 从52vh→22vh）===== */
-#s-chapters{padding-top:22vh;padding-bottom:28px;justify-content:flex-end;}
+/* ====== 章节选择页：确保4个按钮都在一屏内可见 ===== */
+#s-chapters{padding-top:12vh;padding-bottom:100px;justify-content:flex-end;overflow-y:auto;}
 .chapter-list{display:flex;flex-direction:column;gap:12px;width:100%;}
 .chapter-card{
   position:relative;border:none;border-radius:14px;padding:16px 18px;

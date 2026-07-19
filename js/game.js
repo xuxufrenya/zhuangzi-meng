@@ -133,7 +133,7 @@ function goReport(){
     <div class="report-founder">
       <span class="brand">本游戏由【徐徐】</span><strong>创始人——前500强大厂设计总监、心灵成长导师，用AI独立创作完成</strong>❤️<br>
       想让孩子也用AI创造属于自己的app、游戏艺术作品？<br>
-      <strong>关注我们，带领你的孩子进入想象力＋创造力的AI艺术世界🎨</strong>
+      <strong style="color:#567C68">关注我们，带领你的孩子进入想象力＋创造力的AI艺术世界🎨</strong>
     </div>
     <div class="report-qr-row">
       <div class="qr-col">
